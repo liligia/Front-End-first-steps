@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+</head>
+<body>
+    <h1> Where are you from?</h1>
+   Your country is: <input type="text" name="country" id="country"> 
+   <input type="button" value="Enviar" onclick="enviar()">
+   <div id="from">
+
+   </div>
+    <script>
+        function enviar() {
+            var pais = document.getElementById('country')
+            var envio = document.getElementById('from')
+            var resultado = String(pais.value)
+            envio.innerText = `You were born in ${resultado}.`
+            if (resultado.toLowerCase() == 'brazil') {
+                envio.innerHTML += 'You are Brazilian.'
+            } else {
+                envio.innerHTML += 'You are a foreigner.'
+            }
+        }
+    </script>
+</body>
+</html>
